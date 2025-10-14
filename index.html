@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POADDA - A Journey Towards Excellence</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #e8f5e9, #c8e6c9, #a5d6a7);
+      overflow-x: hidden;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== Global Animation Utility ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== LOGO SECTION ===== */
+    .logo-container {
+      text-align: center;
+      margin-top: 60px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .logo-container img {
+      width: 160px;
+      height: 160px;
+      animation: pulse 3s infinite ease-in-out;
+      filter: drop-shadow(0 0 10px rgba(56, 142, 60, 0.4));
+    }
+
+    .caption {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #1b5e20;
+      margin-top: 12px;
+      letter-spacing: 1px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== NEWS SECTION ===== */
+    .news-section {
+      width: 85%;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(10px);
+      margin: 60px auto 0;
+      border-radius: 14px;
+      padding: 25px 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      height: 130px;
+      transition: all 0.4s ease;
+    }
+
+    .news-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(56,142,60,0.2);
+    }
+
+    .news-header {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1b5e20;
+      margin-bottom: 12px;
+    }
+
+    .news-ticker {
+      overflow: hidden;
+      height: 50px;
+      position: relative;
+    }
+
+    .news-ticker p {
+      position: absolute;
+      width: 100%;
+      white-space: nowrap;
+      animation: scroll 12s linear infinite;
+      color: #333;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ===== TEST ZONE ===== */
+    .test-zone {
+      width: 85%;
+      margin: 80px auto 0;
+      padding: 70px 40px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 60px rgba(76, 175, 80, 0.35),
+                  inset 0 0 30px rgba(129, 199, 132, 0.25);
+      position: relative;
+      transition: all 0.6s ease-in-out;
+      overflow: hidden;
+    }
+
+    .test-zone::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(76,175,80,0.3) 0%, transparent 70%);
+      transform: rotate(45deg);
+      animation: glowmove 8s linear infinite;
+      z-index: 0;
+      pointer-events: none; /* ✅ ensures clicks work */
+    }
+
+    @keyframes glowmove {
+      0% { transform: rotate(0deg); opacity: 0.7; }
+      50% { transform: rotate(180deg); opacity: 1; }
+      100% { transform: rotate(360deg); opacity: 0.7; }
+    }
+
+    .test-zone:hover {
+      box-shadow: 0 0 90px rgba(76, 255, 120, 0.7),
+                  0 0 40px rgba(0, 255, 150, 0.3);
+      transform: scale(1.03);
+    }
+
+    .test-zone h2 {
+      position: relative;
+      z-index: 1;
+      color: #004d40;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    }
+
+    .enter-btn {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(90deg, #00c853, #69f0ae);
+      color: #00210e;
+      border: none;
+      padding: 20px 70px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: 0.4s;
+      box-shadow: 0 0 30px rgba(0, 255, 150, 0.6);
+    }
+
+    .enter-btn:hover {
+      background: linear-gradient(90deg, #00e676, #a7ffeb);
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 0 60px rgba(0, 255, 150, 0.9);
+    }
+
+    /* ===== OFFER SECTIONS ===== */
+    .offer-section {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: 70px auto 0;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .offer-box {
+      flex: 1;
+      min-width: 340px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 18px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      min-height: 370px;
+      transition: all 0.5s ease;
+      border: 1px solid rgba(56,142,60,0.15);
+    }
+
+    .offer-box:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(56,142,60,0.25);
+    }
+
+    .offer-box h3 {
+      color: #1b5e20;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .offer-box h3::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #43a047;
+      border-radius: 2px;
+      margin-top: 5px;
+    }
+
+    .offer-box p {
+      color: #333;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .offer-box a {
+      color: #2e7d32;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .offer-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      width: 100%;
+      background: linear-gradient(135deg, #1b5e20, #2e7d32);
+      color: white;
+      margin-top: 80px;
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .contact-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-section p {
+      margin: 6px 0;
+      font-size: 1rem;
+    }
+
+    .social-links a {
+      color: #c8e6c9;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffffff;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .offer-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGO + CAPTION -->
+  <div class="logo-container fade-up">
+    <img src="logo.png" alt="POADDA Logo">
+    <div class="caption">POADDA - A journey towards excellence</div>
+  </div>
+
+  <!-- NEWS SECTION -->
+  <div class="news-section fade-up">
+    <div class="news-header">News / Updates</div>
+    <div class="news-ticker" id="news-ticker">
+      <p>Loading latest news...</p>
+    </div>
+  </div>
+
+  <!-- TEST ZONE (Elegant Bright Neon Glass Effect) -->
+  <div class="test-zone fade-up">
+    <h2>Enter your Test Zone</h2>
+    <button class="enter-btn" onclick="window.location.href='https://poaddain.github.io/POADDA.in/'">
+      Enter
+    </button>
+  </div>
+
+  <!-- OFFERS & EXAM INFO -->
+  <div class="offer-section">
+    <div class="offer-box fade-up">
+      <h3>Festive Season Offer 🎉</h3>
+      <p><b>Register for full practice tests with just Rs.1500/-</b></p>
+      <p>You can give tests for all the chapters of <b>Paper 1</b>, <b>Paper 2</b>, and <b>3 full Paper tests</b> with All India Ranking.  
+      <a href="premium.html">For more, click here</a></p>
+      <hr style="margin: 15px 0; border: none; height: 1px; background: #a5d6a7;">
+      <p><b>Register for All India Ranking Tests</b> – total 3 tests with just Rs.600/-</p>
+      <p>You can register for a single test (Paper 1 & Paper 3) with Rs.300/-</p>
+      <a href="premium.html">For more, click here</a>
+    </div>
+
+    <div class="offer-box fade-up">
+      <h3>Brief of Examinations</h3>
+      <p><b>AAO:</b> Assistant Accounts Officer — financial and auditing domain.</p>
+      <p><b>IPO:</b> Inspector of Posts — supervisory and administrative cadre.</p>
+      <p><b>PA/SA:</b> Postal/Sorting Assistant — key role in operational and customer services.</p>
+      <p><b>GDS:</b> Gramin Dak Sevak — base level postal network service provider.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="contact-section fade-up">
+    <h3>Contact Us</h3>
+    <p>Email: <a href="mailto:info@poadda.in" style="color:#c8e6c9;">info@poadda.in</a></p>
+    <p>Phone: <a href="tel:+919812345678" style="color:#c8e6c9;">+91 98123 45678</a></p>
+    <div class="social-links">
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">YouTube</a>
+    </div>
+    <footer>© 2025 POADDA. All Rights Reserved.</footer>
+  </div>
+
+  <script>
+    // Fetch news from Google Sheet
+    const sheetURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec'; // replace YOUR_SCRIPT_ID
+
+    fetch(sheetURL)
+      .then(res => res.json())
+      .then(data => {
+        const news = data.news || [];
+        const ticker = document.getElementById("news-ticker");
+        if (news.length > 0) {
+          ticker.innerHTML = `<p>${news.join(" ⚫ ")}</p>`;
+        } else {
+          ticker.innerHTML = `<p>No latest updates.</p>`;
+        }
+      })
+      .catch(() => {
+        document.getElementById("news-ticker").innerHTML = `<p>Error loading news.</p>`;
+      });
+
+    // Scroll animation (fade-up on view)
+    const fadeElems = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    fadeElems.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practice Sets</title>
+  <style>
+    :root{
+      --bg:#062b23; /* dark green */
+      --card:#0b3a2f;
+      --accent:#22c55e; /* bright green */
+      --muted:#a7f3d0;
+      --glass: rgba(255,255,255,0.05);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#02150e 0%, #03301f 100%);color:#e6fcef;min-height:100vh;padding:0}
+    header.titlebar{
+      background:linear-gradient(90deg,#064e3b,#0b7a47);
+      display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.1);
+      position:sticky;top:0;z-index:100;text-align:center;
+    }
+    header.titlebar img{height:36px;width:36px;border-radius:6px}
+    header.titlebar h1{margin:0;font-size:20px;letter-spacing:-0.2px;color:#d1fae5}
+    header.titlebar span{font-size:13px;color:#bbf7d0;display:block;margin-top:2px}
+    .back-btn{
+      position:absolute;left:10px;background:none;border:none;color:#fff;font-weight:600;cursor:pointer;font-size:14px;
+    }
+    .container{max-width:980px;margin:0 auto;padding:36px}
+    h1{margin:0;font-size:28px;letter-spacing:-0.3px;color:#bbf7d0}
+    p.lead{margin:0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .card h2{margin:0 0 8px 0;font-size:18px;color:#d1fae5}
+    .card ul{margin:8px 0 14px 18px;color:#a7f3d0}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#059669);font-weight:600;color:#012616;font-size:13px}
+    .promo{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(90deg,#065f46, #064e3b);border:1px solid rgba(34,197,94,0.2)}
+    .promo strong{color:#bbf7d0}
+    .price{font-weight:700;font-size:20px;margin-left:6px;color:#86efac}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{appearance:none;border:0;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#059669);color:#012;}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.1);color:#a7f3d0}
+    .dates{background:var(--glass);padding:10px;border-radius:8px;color:#a7f3d0;font-size:14px}
+    footer{margin-top:22px;color:#a7f3d0;font-size:13px;text-align:center}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}}
+  </style>
+  <script>
+    function goBack(){window.location.href='poadda1.html';}
+  </script>
+</head>
+<body>
+  <header class="titlebar">
+    <button class="back-btn" onclick="goBack()">⟵ Back</button>
+    <img src="logo.png" alt="Poadda Logo" />
+    <div>
+      <h1>POADDA</h1>
+      <span>A journey towards excellence</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <header>
+      <div>
+        <h1>Practice Sets</h1>
+        <p class="lead">Choose between chapter-wise practice or full All India Ranking tests.</p>
+      </div>
+      <div style="margin-left:auto">
+        <span class="badge">Valid: 1 year</span>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card" aria-labelledby="full-tests">
+        <h2 id="full-tests">1. Full Practice Tests</h2>
+        <ul>
+          <li>Chapter wise practice for all chapters</li>
+          <li>Correct answer display</li>
+          <li>Your score and progress</li>
+        </ul>
+        <div class="promo" role="note" aria-live="polite">
+          <p style="margin:0"><strong>You can also get 3 All India Ranking test (paper 1 &amp; paper 3) free</strong> when you purchase the 1-year subscription.</p>
+          <p style="margin:8px 0 0;color:var(--muted)">For all of these you just pay <span class="price">Rs.1500/-</span>. <a href="https://rzp.io/rzp/vaEyCKyJ" style="color:#22c55e;font-weight:700;text-decoration:underline">Click here and subscribe for 1 year</a>.</p>
+        </div>
+        <div style="margin-top:14px" class="actions">
+          <a class="btn btn-primary" href="https://rzp.io/rzp/vaEyCKyJ">Subscribe - Rs.1500/-</a>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="air-tests">
+        <h2 id="air-tests">2. All India Ranking Tests</h2>
+        <p style="margin-top:0;color:var(--muted)">3 tests will be organised with paper 1 &amp; paper 3 just like real exam.</p>
+        <ul>
+          <li>Get All India Rank</li>
+          <li>Full answer sheet</li>
+        </ul>
+        <div class="dates" style="margin-top:8px">
+          <strong>Schedule:</strong>
+          <div style="margin-top:6px">
+            <div>1st exam: <strong>01/11/2025</strong> &amp; <strong>02/11/2025</strong></div>
+            <div>2nd exam: <strong>08/11/2025</strong> &amp; <strong>09/11/2025</strong></div>
+            <div>3rd exam: <strong>15/11/2025</strong> &amp; <strong>16/11/2025</strong></div>
+          </div>
+        </div>
+        <div style="margin-top:12px;color:var(--muted)">
+          <p style="margin:0">For all these you have to pay just <strong>Rs.600/-</strong> (or <strong>Rs.300/-</strong> per exam).</p>
+        </div>
+        <div style="margin-top:14px" class="actions">
+          <a class="btn btn-primary" href="https://rzp.io/rzp/vaEyCKyJ">Subscribe &amp; Pay - Rs.600/-</a>
+          <a class="btn btn-ghost" href="https://rzp.io/rzp/vaEyCKyJ">Pay Rs.300/- for one exam</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Questions? Contact support or click the subscription links above to proceed to payment.</p>
+    </footer>
+  </div>
+</body>
+</html>
