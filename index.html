@@ -152,25 +152,45 @@ header::after{
 /* ================= OUR OFFER ================= */
 .offer-section{
   width:92%;
-  margin:80px auto;
+  margin:80px auto 180px; /* increased bottom space */
 }
+
 .offer-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:25px;
 }
+/* ================= OUR OFFER (UPDATED DESIGN) ================= */
 .offer-card{
-  padding:35px;
+  padding:15px;
   text-align:center;
   border-radius:20px;
   font-weight:800;
-  background:#e0f2f1;
+  background:#ffffff;
   cursor:pointer;
   transition:.4s;
+  border:2px solid #00cfa5;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
 }
+
+.offer-card img{
+  width:100%;
+  height:150px;
+  object-fit:contain;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+.offer-card span{
+  display:block;
+  font-size:1.2rem;
+  color:#0b6b3a;
+}
+
 .offer-card:hover{
-  transform:translateY(-8px) scale(1.05);
-  background:#b2dfdb;
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+  background:#e0f2f1;
 }
 
 /* ================= FOOTER ================= */
@@ -185,6 +205,14 @@ footer{
 @media(max-width:768px){
   .main-container,.aspirants-container{flex-direction:column}
 }
+.section-divider{
+  width:80%;
+  height:3px;
+  margin:60px auto;
+  background:linear-gradient(to right, transparent, #00cfa5, #1e88e5, transparent);
+  border-radius:10px;
+}
+
 </style>
 </head>
 
@@ -256,12 +284,28 @@ footer{
   </div>
 
   <div class="offer-grid">
-    <div class="offer-card" onclick="location.href='mts.html'">MTS Exam</div>
-    <div class="offer-card" onclick="location.href='postman.html'">Postman Exam</div>
-    <div class="offer-card" onclick="location.href='pa.html'">PA Exam</div>
-    <div class="offer-card" onclick="location.href='ip.html'">IP Exam</div>
+  <div class="offer-card" onclick="location.href='mts.html'">
+    <img src="mts.png" alt="MTS Exam">
+    <span>MTS Exam</span>
+  </div>
+
+  <div class="offer-card" onclick="location.href='postman.html'">
+    <img src="postman.png" alt="Postman Exam">
+    <span>Postman Exam</span>
+  </div>
+
+  <div class="offer-card" onclick="location.href='pa.html'">
+    <img src="pasa.png" alt="PA / SA Exam">
+    <span>PA / SA Exam</span>
+  </div>
+
+  <div class="offer-card" onclick="location.href='ip.html'">
+    <img src="ipo.png" alt="IPO Exam">
+    <span>Inspector of Posts</span>
   </div>
 </div>
+
+<div class="section-divider"></div>
 
 <footer>
   <h3>Contact Us</h3>
