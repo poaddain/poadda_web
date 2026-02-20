@@ -40,7 +40,39 @@ header::after{
   font-family:'Libre Baskerville', serif;
   font-size:2.4rem;
 }
+/* ================= INDIA POST BANNER ================= */
+.india-post-banner{
+  width:100%;
+  background:linear-gradient(90deg,#ffcc00,#ffd633,#ffcc00);
+  padding:18px 10px;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  border-bottom:4px solid #d32f2f;
+}
 
+.india-post-banner img{
+  width:90px;
+  height:auto;
+}
+
+.india-post-text{
+  font-size:1.3rem;
+  font-weight:800;
+  color:#b71c1c;
+}
+
+@media(max-width:768px){
+  .india-post-banner{
+    flex-direction:column;
+  }
+  .india-post-text{
+    font-size:1.1rem;
+  }
+}
 /* ================= MAIN ================= */
 .main-container{
   width:92%;
@@ -224,7 +256,12 @@ footer{
   </div>
   <div class="caption">POADDA – A Journey Towards Excellence</div>
 </header>
-
+<div class="india-post-banner">
+  <img src="indiapost.png" alt="India Post Logo">
+  <div class="india-post-text">
+    POAdda – A Premium Institution for Departmental Exam and Guidance to the Employees
+  </div>
+</div>
 <div class="main-container">
 
   <div class="news-box">
@@ -314,6 +351,7 @@ footer{
 
 </body>
 </html>
+
 
 
 
