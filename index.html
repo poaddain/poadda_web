@@ -40,7 +40,22 @@ header::after{
   font-family:'Libre Baskerville', serif;
   font-size:2.4rem;
 }
-/* ================= INDIA POST BANNER ================= */
+/* ================= RIBBON LOGIN BUTTON ================= */
+.ribbon-login-btn{
+  background:#b71c1c;
+  color:#ffffff;
+  padding:8px 20px;
+  border-radius:25px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+.ribbon-login-btn:hover{
+  background:#0b6b3a;
+  transform:scale(1.05);
+}/* ================= INDIA POST BANNER ================= */
 .india-post-banner{
   width:100%;
   background:linear-gradient(90deg,#ffcc00,#ffd633,#ffcc00);
@@ -71,6 +86,147 @@ header::after{
   }
   .india-post-text{
     font-size:1.1rem;
+  }
+}
+/* ================= FULL TEST BUTTON (CENTERED + RESPONSIVE + GLOW) ================= */
+.full-test-card{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:100%;
+  margin-top:18px;
+
+  width:85%;
+  max-width:900px;
+
+  padding:14px 28px;
+  border-radius:20px;
+
+  background:linear-gradient(135deg,#ff7a18,#ffb347);
+  color:#111;
+  font-weight:800;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+
+  cursor:pointer;
+  transition:.3s ease;
+
+  box-shadow:
+    0 0 15px rgba(255,122,24,0.6),
+    0 0 30px rgba(255,179,71,0.5);
+
+  animation:glowPulse 2s infinite alternate;
+}
+
+.full-test-card:hover{
+  transform:translateX(-50%) scale(1.03);
+}
+
+/* LIVE TAG */
+.full-test-card .live-tag{
+  position:absolute;
+  top:-12px;
+  left:25px;
+  background:#c62828;
+  color:white;
+  padding:5px 14px;
+  font-size:0.75rem;
+  font-weight:700;
+  border-radius:20px;
+}
+
+/* TEXT STYLING */
+.full-test-card h3{
+  margin:0;
+  font-size:1.1rem;
+}
+
+.full-test-card p{
+  margin:0;
+  font-size:0.95rem;
+  font-weight:700;
+}
+
+.full-test-card span{
+  font-weight:900;
+}
+
+/* GLOW ANIMATION */
+@keyframes glowPulse{
+  from{
+    box-shadow:
+      0 0 15px rgba(255,122,24,0.6),
+      0 0 30px rgba(255,179,71,0.5);
+  }
+  to{
+    box-shadow:
+      0 0 25px rgba(255,122,24,0.9),
+      0 0 60px rgba(255,179,71,0.8);
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+  .full-test-card{
+    flex-direction:column;
+    text-align:center;
+    padding:16px 18px;
+  }
+
+  .full-test-card h3{
+    font-size:1rem;
+  }
+
+  .full-test-card p{
+    font-size:0.85rem;
+  }
+}
+/* ================= LEFT FLOATING REGISTER BUTTON ================= */
+.register-fulltest-btn{
+  position:fixed;
+  left:15px;
+  top:60%;
+  transform:translateY(-50%);
+  background:linear-gradient(135deg,#ff7a18,#ffb347);
+  color:#111;
+   padding:16px 28px;            /* larger */
+  font-size:1rem;
+  font-weight:900;
+  text-decoration:none;
+  letter-spacing:.5px;
+  border-radius:30px;
+  font-size:0.85rem;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 6px 20px rgba(0,0,0,0.25);
+  z-index:1000;
+  transition:.3s ease;
+  animation:floatGlow 2s infinite alternate;
+}
+
+.register-fulltest-btn:hover{
+  transform:translateY(-50%) scale(1.08);
+}
+
+/* Glow animation */
+@keyframes floatGlow{
+  from{
+    box-shadow:0 6px 20px rgba(255,122,24,0.5);
+  }
+  to{
+    box-shadow:0 6px 35px rgba(255,122,24,0.9);
+  }
+}
+
+/* Mobile adjustment */
+@media(max-width:768px){
+  .register-fulltest-btn{
+    left:10px;
+    font-size:0.75rem;
+    padding:8px 12px;
   }
 }
 /* ================= MAIN ================= */
@@ -244,7 +400,72 @@ footer{
   background:linear-gradient(to right, transparent, #00cfa5, #1e88e5, transparent);
   border-radius:10px;
 }
+/* ===== FULL TEST WITH RANKING BUTTON (UPDATED) ===== */
+.airt-box{
+  position:fixed;
+  left:20px;
+  top:32%;
+  transform:translateY(-50%);
+  width:300px;              /* wider */
+  padding:14px 20px;        /* smaller height */
+  border-radius:16px;
+  background:linear-gradient(135deg,#ff512f,#ffcc00);
+  color:#111;
+  text-align:center;
+  font-weight:800;
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+  cursor:pointer;
+  z-index:999;
+  display:none;
+  animation:pulseAirt 1.8s infinite;
+}
 
+/* LIVE ribbon */
+.airt-box::after{
+  content:"LIVE";
+  position:absolute;
+  top:6px;
+  left:-28px;
+  background:#d60000;
+  color:#fff;
+  padding:3px 32px;
+  font-size:10px;
+  font-weight:900;
+  transform:rotate(-45deg);
+}
+
+/* Compact text */
+.airt-box h4{
+  margin:0;
+  font-size:16px;
+}
+
+.airt-box .date{
+  font-size:13px;
+  margin:4px 0;
+}
+
+.airt-box small{
+  font-size:12px;
+}
+
+@keyframes pulseAirt{
+  0%{transform:translateY(-50%) scale(1);}
+  50%{transform:translateY(-50%) scale(1.05);}
+  100%{transform:translateY(-50%) scale(1);}
+}
+
+@media(max-width:900px){
+  .airt-box{
+    width:90%;
+    left:5%;
+    top:25%;
+  }
+}
+/* Make banner relative for positioning */
+.india-post-banner{
+  position:relative;
+}
 </style>
 </head>
 
@@ -255,12 +476,23 @@ footer{
     <img src="logo.png">
   </div>
   <div class="caption">POADDA – A Journey Towards Excellence</div>
+  
 </header>
 <div class="india-post-banner">
   <img src="ip.png" alt="India Post Logo">
+
   <div class="india-post-text">
     POAdda – A Premium Institution for Departmental Exam and Guidance to the Employees
   </div>
+<div class="full-test-card" onclick="location.href='user.html'">
+  <div class="live-tag">LIVE</div>
+  <h3>Full Test with Ranking (PA/SA)</h3>
+  <p>Test duration: 07.03.2026 & 08.03.2026, Result on 10.03.2026 at 8 p.m.</p>
+  <span>Click Here</span>
+</div>
+  <a href="https://poaddain.github.io/poadda.in-main/user.html" class="ribbon-login-btn">
+    Login / Register
+  </a>
 </div>
 <div class="main-container">
 
@@ -348,20 +580,10 @@ footer{
   <h3>Contact Us</h3>
   <p>Email: admin@poadda.in | whatsapp: +91-9007896226</p>
 </footer>
-
+<a href="user.html" class="register-fulltest-btn">
+  Register for Full Test(PASA) at Free
+</a>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
