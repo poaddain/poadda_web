@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PA Exam | POAdda</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:linear-gradient(135deg,#e3f2fd,#bbdefb,#e1f5fe);
+    color:#0d1b2a;
+}
+
+/* HEADER (ANIMATED GREEN) */
+.header{
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(270deg,#0f9d58,#34a853,#0f9d58);
+    background-size:400% 400%;
+    animation:greenFlow 8s ease infinite;
+    color:white;
+}
+
+@keyframes greenFlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.header img{
+    width:110px;
+    margin-bottom:15px;
+}
+
+.header h1{
+    font-size:40px;
+    margin:10px 0 5px;
+}
+
+.header p{
+    font-size:18px;
+    margin:0;
+    font-weight:500;
+    letter-spacing:1px;
+}
+
+/* EXAM NOTICE */
+.exam-notice{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:40px 8%;
+    padding:25px 30px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.7);
+    border:1px solid rgba(0,0,0,0.08);
+}
+
+.signup-btn{
+    background:linear-gradient(135deg,#FFD700,#FFB700);
+    color:black;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+}
+
+/* MAIN LAYOUT */
+.main-container{
+    display:flex;
+    gap:40px;
+    padding:60px 8%;
+}
+
+.left-content{
+    flex:0 0 80%;
+}
+
+.right-sidebar{
+    flex:0 0 20%;
+}
+
+/* CAREER CARD */
+.career-card{
+    background:white;
+    padding:40px;
+    margin-bottom:50px;
+    border-radius:18px;
+    border:1px solid rgba(0,0,0,0.08);
+}
+
+.career-card h2{
+    text-align:center;
+    font-size:30px;
+    color:#0f9d58;
+}
+
+.card-content{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.card-text{ flex:1; }
+
+.card-image{
+    flex:1;
+    text-align:center;
+}
+
+/* BIGGER IMAGES */
+.card-image img{
+    width:100%;
+    max-width:900px;
+    border-radius:14px;
+}
+
+/* GOLD LUXURY SIDEBAR */
+.floating-card{
+    position:sticky;
+    top:120px;
+    padding:35px;
+    border-radius:25px;
+    background:linear-gradient(145deg,#1a1a1a,#008100);
+    box-shadow:0 0 25px rgba(255,215,0,0.4);
+    border:2px solid transparent;
+    background-clip:padding-box;
+    position:relative;
+    color:white;
+}
+
+/* Animated Gold Border */
+.floating-card::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    border-radius:28px;
+    background:linear-gradient(45deg,#FFD700,#FFB700,#FFD700,#fff4b0,#FFD700);
+    background-size:400%;
+    z-index:-1;
+    animation:glow 6s linear infinite;
+}
+
+@keyframes glow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.floating-card h3{
+    font-size:22px;
+    margin-bottom:15px;
+    color:#FFD700;
+}
+
+/* COUNTDOWN HEADING */
+.countdown-title{
+    text-align:center;
+    font-size:18px;
+    margin-top:25px;
+    color:#FFD700;
+}
+
+/* COUNTDOWN STYLE */
+.countdown{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+}
+
+.time-box{
+    text-align:center;
+    flex:1;
+}
+
+.time-box span{
+    display:block;
+    font-size:22px;
+    font-weight:bold;
+    color:#FFD700;
+}
+
+.time-box small{
+    font-size:12px;
+    color:#ccc;
+}
+
+.floating-card p{
+    font-size:14px;
+    margin:10px 0;
+}
+
+.floating-card button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#FFD700,#FFB700);
+    font-weight:700;
+    cursor:pointer;
+    color:black;
+    transition:0.3s;
+}
+
+.floating-card button:hover{
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+    .main-container{
+        flex-direction:column;
+    }
+    .left-content,
+    .right-sidebar{
+        flex:100%;
+    }
+    .floating-card{
+        position:relative;
+        top:0;
+        margin-top:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <img src="logo3d.png">
+    <h1>PA Exam</h1>
+    <p>POAdda – A journey towards excellence.</p>
+</div>
+
+<div class="exam-notice">
+    <div>
+        Limited Departmental Exam for Postal Assistant – 
+        <strong>24 May, 2026 </strong>
+    </div>
+    <a href="user.html" class="signup-btn">Signup Now</a>
+</div>
+
+<section class="main-container">
+
+<div class="left-content">
+
+<div class="career-card">
+<h2>Career Opportunity as Postal Assistant without Promotional Exam</h2>
+<div class="card-content">
+<div class="card-text">
+<p>Medium promotional aspect on the basis of seniority.</p>
+<p>These are mainly operative post, like SPM or DC incharge and lastly Postmaster of HOs.</p>
+<ul>
+<li>Postal Assistant – Level 4</li>
+<li>LSG – Level 5</li>
+<li>HSG II – Level 6</li>
+<li>HSG I – Level 7</li>
+<li>HSG NFG – Level 8</li>
+</ul>
+</div>
+<div class="card-image">
+<img src="careerpa.png">
+</div>
+</div>
+</div>
+
+<div class="career-card">
+<h2>Career Growth via IP Exam</h2>
+<div class="card-content">
+<div class="card-text">
+<p>Modarate promotional aspect on the basis of seniority & PS Group B Exam.</p>
+<p>These are mainly administrative post. PS Group B exam can give you high promotional aspect.</p>
+
+<ul>
+<li>Inspector Posts (IP)- Level 7</li>
+<li>ASP- Level 8</li>
+<li>SP- Level 9</li>
+<li>SSP- Level 10</li>
+<li>Higher Administrative Grades</li>
+</ul>
+</div>
+<div class="card-image">
+<img src="careeripo.png">
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="right-sidebar">
+<div class="floating-card">
+
+<h3>Enroll Now – Premium Preparation</h3>
+
+<p>Chapter wise Practice Sets – Rs.1500/-</p>
+<p>Study Material – Rs.1500/-</p>
+<p>Both – Rs.2500/-</p>
+<p>5 Full Practice Sets – Rs.399/-</p>
+
+<button onclick="window.location.href='user.html'">
+Enroll Now
+</button>
+
+<div class="countdown-title">Count Down for Exam</div>
+
+<div class="countdown">
+<div class="time-box">
+<span id="days">00</span>
+<small>Days</small>
+</div>
+<div class="time-box">
+<span id="hours">00</span>
+<small>Hours</small>
+</div>
+<div class="time-box">
+<span id="minutes">00</span>
+<small>Min</small>
+</div>
+<div class="time-box">
+<span id="seconds">00</span>
+<small>Sec</small>
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<div style="text-align:center; margin:40px 0;">
+    <a href="https://poadda.in" style="
+        display:inline-block;
+        padding:14px 40px;
+        background:linear-gradient(135deg,#0f9d58,#34a853);
+        color:white;
+        text-decoration:none;
+        border-radius:30px;
+        font-weight:600;
+        transition:0.3s;
+    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        ⬅ Back to Home
+    </a>
+</div>
+
+<script>
+const examDate = new Date("May 24, 2026 11:00:00").getTime();
+
+setInterval(function(){
+    const now = new Date().getTime();
+    const distance = examDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+},1000);
+</script>
+
+</body>
+</html>
