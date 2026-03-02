@@ -13,7 +13,7 @@ body{
     color:#0d1b2a;
 }
 
-/* HEADER (ANIMATED GREEN) */
+/* HEADER */
 .header{
     text-align:center;
     padding:50px 20px;
@@ -67,6 +67,55 @@ body{
     font-weight:700;
 }
 
+/* ===== SYLLABUS SECTION ===== */
+.syllabus-box{
+    margin:30px 8%;
+    background:rgba(255,255,255,0.95);
+    padding:35px;
+    border-radius:18px;
+    border:1px solid rgba(0,0,0,0.08);
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.syllabus-box h2{
+    color:#0f9d58;
+    margin-bottom:25px;
+}
+
+.paper-title{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.total-badge{
+    display:inline-block;
+    background:#0f9d58;
+    color:white;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    margin-left:10px;
+}
+
+.paper-image{
+    width:100%;
+    max-width:850px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    margin-bottom:25px;
+}
+
+.paper2-text{
+    font-size:18px;
+    font-weight:600;
+}
+
 /* MAIN LAYOUT */
 .main-container{
     display:flex;
@@ -110,14 +159,13 @@ body{
     text-align:center;
 }
 
-/* BIGGER IMAGES */
 .card-image img{
     width:100%;
     max-width:900px;
     border-radius:14px;
 }
 
-/* GOLD LUXURY SIDEBAR */
+/* SIDEBAR */
 .floating-card{
     position:sticky;
     top:120px;
@@ -131,7 +179,6 @@ body{
     color:white;
 }
 
-/* Animated Gold Border */
 .floating-card::before{
     content:"";
     position:absolute;
@@ -155,7 +202,6 @@ body{
     color:#FFD700;
 }
 
-/* COUNTDOWN HEADING */
 .countdown-title{
     text-align:center;
     font-size:18px;
@@ -163,7 +209,6 @@ body{
     color:#FFD700;
 }
 
-/* COUNTDOWN STYLE */
 .countdown{
     display:flex;
     justify-content:space-between;
@@ -230,7 +275,7 @@ body{
 <body>
 
 <div class="header">
-    <img src="logo.png">
+    <img src="logo3d.png">
     <h1>PA Exam</h1>
     <p>POAdda – A journey towards excellence.</p>
 </div>
@@ -243,8 +288,27 @@ body{
     <a href="user.html" class="signup-btn">Signup Now</a>
 </div>
 
-<section class="main-container">
+<!-- ===== SYLLABUS ADDED HERE ===== -->
 
+<div class="syllabus-box">
+    <h2>Syllabus</h2>
+
+    <div class="paper-title">
+        Paper 1:
+        <span class="total-badge">Total Marks – 100</span>
+    </div>
+
+    <img src="pap1.png" class="paper-image">
+
+    <div class="paper-title">Paper 2:</div>
+    <div class="paper2-text">
+        Data Entry Skill Test (DEST) (1200 key), Qualifying
+    </div>
+</div>
+
+<!-- ===== ORIGINAL CONTENT CONTINUES ===== -->
+
+<section class="main-container">
 <div class="left-content">
 
 <div class="career-card">
@@ -262,7 +326,7 @@ body{
 </ul>
 </div>
 <div class="card-image">
-<img src="careerPA.png">
+<img src="careerpa.png">
 </div>
 </div>
 </div>
@@ -283,7 +347,7 @@ body{
 </ul>
 </div>
 <div class="card-image">
-<img src="careerIPO.png">
+<img src="careeripo.png">
 </div>
 </div>
 </div>
@@ -298,52 +362,25 @@ body{
 <p>Chapter wise Practice Sets – Rs.1500/-</p>
 <p>Study Material – Rs.1500/-</p>
 <p>Both – Rs.2500/-</p>
-<p>5 Full Practice Sets – Rs.399/-</p>
+<p>5 Full Practice Sets – Rs.499/-</p>
 
-<button onclick="window.location.href='https://poaddain.github.io/poadda.in-main/user.html'">
+<button onclick="window.location.href='user.html'">
 Enroll Now
 </button>
 
 <div class="countdown-title">Count Down for Exam</div>
 
 <div class="countdown">
-<div class="time-box">
-<span id="days">00</span>
-<small>Days</small>
-</div>
-<div class="time-box">
-<span id="hours">00</span>
-<small>Hours</small>
-</div>
-<div class="time-box">
-<span id="minutes">00</span>
-<small>Min</small>
-</div>
-<div class="time-box">
-<span id="seconds">00</span>
-<small>Sec</small>
-</div>
+<div class="time-box"><span id="days">00</span><small>Days</small></div>
+<div class="time-box"><span id="hours">00</span><small>Hours</small></div>
+<div class="time-box"><span id="minutes">00</span><small>Min</small></div>
+<div class="time-box"><span id="seconds">00</span><small>Sec</small></div>
 </div>
 
 </div>
 </div>
 
 </section>
-
-<div style="text-align:center; margin:40px 0;">
-    <a href="https://poadda.in" style="
-        display:inline-block;
-        padding:14px 40px;
-        background:linear-gradient(135deg,#0f9d58,#34a853);
-        color:white;
-        text-decoration:none;
-        border-radius:30px;
-        font-weight:600;
-        transition:0.3s;
-    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        ⬅ Back to Home
-    </a>
-</div>
 
 <script>
 const examDate = new Date("May 24, 2026 11:00:00").getTime();
@@ -352,20 +389,16 @@ setInterval(function(){
     const now = new Date().getTime();
     const distance = examDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("days").innerHTML =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerHTML =
+        Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerHTML =
+        Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").innerHTML =
+        Math.floor((distance % (1000 * 60)) / 1000);
 },1000);
 </script>
 
 </body>
 </html>
-
-
-
