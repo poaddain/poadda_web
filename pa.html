@@ -13,6 +13,12 @@ body{
     color:#0d1b2a;
 }
 
+/* GLOBAL */
+img{
+    max-width:100%;
+    height:auto;
+}
+
 /* HEADER */
 .header{
     text-align:center;
@@ -43,7 +49,6 @@ body{
     font-size:18px;
     margin:0;
     font-weight:500;
-    letter-spacing:1px;
 }
 
 /* EXAM NOTICE */
@@ -55,7 +60,6 @@ body{
     padding:25px 30px;
     border-radius:15px;
     background:rgba(255,255,255,0.7);
-    border:1px solid rgba(0,0,0,0.08);
 }
 
 .signup-btn{
@@ -67,152 +71,89 @@ body{
     font-weight:700;
 }
 
-/* ===== SYLLABUS SECTION ===== */
+/* SYLLABUS */
 .syllabus-box{
     margin:30px 8%;
-    background:rgba(255,255,255,0.95);
-    padding:35px;
+    background:#fff;
+    padding:30px;
     border-radius:18px;
-    border:1px solid rgba(0,0,0,0.08);
-    animation:fadeUp 1s ease;
-}
-
-@keyframes fadeUp{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
 }
 
 .syllabus-box h2{
     color:#0f9d58;
-    margin-bottom:25px;
 }
 
 .paper-title{
     font-size:20px;
     font-weight:700;
-    margin-bottom:15px;
 }
 
 .total-badge{
-    display:inline-block;
     background:#0f9d58;
     color:white;
-    padding:6px 14px;
+    padding:5px 12px;
     border-radius:20px;
-    font-size:13px;
-    margin-left:10px;
+    font-size:12px;
 }
 
 .paper-image{
-    width:100%;
-    max-width:850px;
-    border-radius:14px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.12);
-    margin-bottom:25px;
+    border-radius:12px;
+    margin:20px 0;
 }
 
 .paper2-text{
-    font-size:18px;
-    font-weight:600;
+    font-size:16px;
 }
 
-/* MAIN LAYOUT */
+/* MAIN */
 .main-container{
     display:flex;
     gap:40px;
-    padding:60px 8%;
+    padding:40px 6%;
 }
 
-.left-content{
-    flex:0 0 80%;
-}
+.left-content{flex:80%;}
+.right-sidebar{flex:20%;}
 
-.right-sidebar{
-    flex:0 0 20%;
-}
-
-/* CAREER CARD */
+/* CARD */
 .career-card{
     background:white;
-    padding:40px;
-    margin-bottom:50px;
+    padding:30px;
+    margin-bottom:40px;
     border-radius:18px;
-    border:1px solid rgba(0,0,0,0.08);
 }
 
 .career-card h2{
     text-align:center;
-    font-size:30px;
     color:#0f9d58;
 }
 
 .card-content{
     display:flex;
-    gap:40px;
-    flex-wrap:wrap;
+    gap:30px;
 }
 
-.card-text{ flex:1; }
-
-.card-image{
-    flex:1;
-    text-align:center;
-}
-
-.card-image img{
-    width:100%;
-    max-width:900px;
-    border-radius:14px;
-}
+.card-text{flex:1;}
+.card-image{flex:1; text-align:center;}
 
 /* SIDEBAR */
 .floating-card{
     position:sticky;
-    top:120px;
-    padding:35px;
-    border-radius:25px;
-    background:linear-gradient(145deg,#1a1a1a,#008100);
-    box-shadow:0 0 25px rgba(255,215,0,0.4);
-    border:2px solid transparent;
-    background-clip:padding-box;
-    position:relative;
+    top:100px;
+    padding:25px;
+    border-radius:20px;
+    background:#111;
     color:white;
 }
 
-.floating-card::before{
-    content:"";
-    position:absolute;
-    inset:-3px;
-    border-radius:28px;
-    background:linear-gradient(45deg,#FFD700,#FFB700,#FFD700,#fff4b0,#FFD700);
-    background-size:400%;
-    z-index:-1;
-    animation:glow 6s linear infinite;
-}
-
-@keyframes glow{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
 .floating-card h3{
-    font-size:22px;
-    margin-bottom:15px;
-    color:#FFD700;
-}
-
-.countdown-title{
-    text-align:center;
-    font-size:18px;
-    margin-top:25px;
     color:#FFD700;
 }
 
 .countdown{
     display:flex;
     justify-content:space-between;
-    margin-top:15px;
+    margin-top:10px;
 }
 
 .time-box{
@@ -221,53 +162,100 @@ body{
 }
 
 .time-box span{
-    display:block;
-    font-size:22px;
-    font-weight:bold;
+    font-size:20px;
     color:#FFD700;
-}
-
-.time-box small{
-    font-size:12px;
-    color:#ccc;
-}
-
-.floating-card p{
-    font-size:14px;
-    margin:10px 0;
 }
 
 .floating-card button{
     width:100%;
-    margin-top:20px;
-    padding:14px;
+    margin-top:15px;
+    padding:12px;
     border:none;
     border-radius:30px;
     background:linear-gradient(135deg,#FFD700,#FFB700);
     font-weight:700;
-    cursor:pointer;
-    color:black;
-    transition:0.3s;
 }
 
-.floating-card button:hover{
-    transform:scale(1.05);
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+.header{
+    padding:30px 15px;
+}
+.header h1{
+    font-size:26px;
+}
+.header p{
+    font-size:14px;
+}
+.header img{
+    width:80px;
 }
 
-/* RESPONSIVE */
-@media(max-width:992px){
-    .main-container{
-        flex-direction:column;
-    }
-    .left-content,
-    .right-sidebar{
-        flex:100%;
-    }
-    .floating-card{
-        position:relative;
-        top:0;
-        margin-top:30px;
-    }
+.exam-notice{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+    margin:20px 5%;
+    padding:18px;
+}
+.signup-btn{
+    width:100%;
+    display:block;
+}
+
+.syllabus-box{
+    margin:20px 5%;
+    padding:20px;
+}
+
+.main-container{
+    flex-direction:column;
+    padding:20px 5%;
+    gap:25px;
+}
+
+.card-content{
+    flex-direction:column;
+}
+
+.career-card{
+    padding:20px;
+}
+.career-card h2{
+    font-size:20px;
+}
+
+.floating-card{
+    position:relative;
+    top:0;
+}
+
+}
+
+/* STICKY MOBILE BUTTON */
+.mobile-enroll{
+    display:none;
+}
+
+@media(max-width:768px){
+.mobile-enroll{
+    display:block;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#0f9d58;
+    text-align:center;
+    padding:15px;
+    z-index:999;
+}
+.mobile-enroll a{
+    color:white;
+    font-weight:700;
+    text-decoration:none;
+    font-size:18px;
+}
 }
 </style>
 </head>
@@ -275,48 +263,41 @@ body{
 <body>
 
 <div class="header">
-    <img src="logo.png">
+    <img src="logo3d.png">
     <h1>PA Exam</h1>
-    <p>POAdda – A journey towards excellence.</p>
+    <p>POAdda – A journey towards excellence</p>
 </div>
 
 <div class="exam-notice">
     <div>
-        Limited Departmental Exam for Postal Assistant – 
-        <strong>24 May, 2026 </strong>
+        Limited Departmental Exam – <strong>24 May 2026</strong>
     </div>
-    <a href="https://poaddain.github.io/poadda.in-main/user.html" class="signup-btn">Signup Now</a>
+    <a href="user.html" class="signup-btn">Signup Now</a>
 </div>
-
-<!-- ===== SYLLABUS ADDED HERE ===== -->
 
 <div class="syllabus-box">
     <h2>Syllabus</h2>
 
     <div class="paper-title">
-        Paper 1:
-        <span class="total-badge">Total Marks – 100</span>
+        Paper 1 <span class="total-badge">100 Marks</span>
     </div>
 
     <img src="pap1.png" class="paper-image">
 
-    <div class="paper-title">Paper 2:</div>
+    <div class="paper-title">Paper 2</div>
     <div class="paper2-text">
-        Data Entry Skill Test (DEST) (1200 key), Qualifying
+        Data Entry Skill Test (DEST) – Qualifying
     </div>
 </div>
 
-<!-- ===== ORIGINAL CONTENT CONTINUES ===== -->
-
 <section class="main-container">
+
 <div class="left-content">
 
 <div class="career-card">
-<h2>Career Opportunity as Postal Assistant without Promotional Exam</h2>
+<h2>Career Opportunity</h2>
 <div class="card-content">
 <div class="card-text">
-<p>Medium promotional aspect on the basis of seniority.</p>
-<p>These are mainly operative post, like SPM or DC incharge and lastly Postmaster of HOs.</p>
 <ul>
 <li>Postal Assistant – Level 4</li>
 <li>LSG – Level 5</li>
@@ -332,18 +313,13 @@ body{
 </div>
 
 <div class="career-card">
-<h2>Career Growth via IP Exam</h2>
+<h2>Career via IP Exam</h2>
 <div class="card-content">
 <div class="card-text">
-<p>Modarate promotional aspect on the basis of seniority & PS Group B Exam.</p>
-<p>These are mainly administrative post. PS Group B exam can give you high promotional aspect.</p>
-
 <ul>
-<li>Inspector Posts (IP)- Level 7</li>
-<li>ASP- Level 8</li>
-<li>SP- Level 9</li>
-<li>SSP- Level 10</li>
-<li>Higher Administrative Grades</li>
+<li>Inspector – Level 7</li>
+<li>ASP – Level 8</li>
+<li>SP – Level 9</li>
 </ul>
 </div>
 <div class="card-image">
@@ -357,24 +333,21 @@ body{
 <div class="right-sidebar">
 <div class="floating-card">
 
-<h3>Enroll Now – Premium Preparation</h3>
+<h3>Premium Course</h3>
 
-<p>Chapter wise Practice Sets – Rs.1500/-</p>
-<p>Study Material – Rs.1500/-</p>
-<p>Both – Rs.2500/-</p>
-<p>5 Full Practice Sets – Rs.499/-</p>
+<p>Chapterwise + 10 Full Tests</p>
 
-<button onclick="window.location.href='https://poaddain.github.io/poadda.in-main/user.html'">
+<p style="color:#FFD700; font-weight:bold;">Rs.499</p>
+
+<button onclick="window.location.href='user.html'">
 Enroll Now
 </button>
 
-<div class="countdown-title">Count Down for Exam</div>
-
 <div class="countdown">
-<div class="time-box"><span id="days">00</span><small>Days</small></div>
-<div class="time-box"><span id="hours">00</span><small>Hours</small></div>
-<div class="time-box"><span id="minutes">00</span><small>Min</small></div>
-<div class="time-box"><span id="seconds">00</span><small>Sec</small></div>
+<div class="time-box"><span id="days"></span><small>Days</small></div>
+<div class="time-box"><span id="hours"></span><small>Hrs</small></div>
+<div class="time-box"><span id="minutes"></span><small>Min</small></div>
+<div class="time-box"><span id="seconds"></span><small>Sec</small></div>
 </div>
 
 </div>
@@ -382,25 +355,24 @@ Enroll Now
 
 </section>
 
+<!-- MOBILE STICKY BUTTON -->
+<div class="mobile-enroll">
+<a href="user.html">Enroll Now ₹499</a>
+</div>
+
 <script>
 const examDate = new Date("May 24, 2026 11:00:00").getTime();
 
 setInterval(function(){
     const now = new Date().getTime();
-    const distance = examDate - now;
+    const d = examDate - now;
 
-    document.getElementById("days").innerHTML =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerHTML =
-        Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    document.getElementById("minutes").innerHTML =
-        Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById("seconds").innerHTML =
-        Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("days").innerHTML = Math.floor(d/(1000*60*60*24));
+    document.getElementById("hours").innerHTML = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+    document.getElementById("minutes").innerHTML = Math.floor((d%(1000*60*60))/(1000*60));
+    document.getElementById("seconds").innerHTML = Math.floor((d%(1000*60))/1000);
 },1000);
 </script>
 
 </body>
 </html>
-
-
